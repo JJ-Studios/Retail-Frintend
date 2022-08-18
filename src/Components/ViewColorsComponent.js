@@ -17,13 +17,15 @@ function ViewColorsComponent() {
   numTotalItems = colorList.length;
 
   const getColors = () => {
-    Axios.get("http://localhost:3001/GetColors").then((response) => {
-      setColorList(response.data);
-    });
+    Axios.get("https://bathhut-api.herokuapp.com/GetColors").then(
+      (response) => {
+        setColorList(response.data);
+      }
+    );
   };
 
   const editColor = (id) => {
-    Axios.put("http://localhost:3001/EditColor", {
+    Axios.put("https://bathhut-api.herokuapp.com/EditColor", {
       color: newColor,
       id: id,
     });
@@ -31,12 +33,12 @@ function ViewColorsComponent() {
   };
 
   const deleteColor = (id) => {
-    Axios.delete(`http://localhost:3001/DeleteColor/${id}`);
+    Axios.delete(`https://bathhut-api.herokuapp.com/DeleteColor/${id}`);
     window.location.reload(false);
   };
 
   const createColor = () => {
-    Axios.post("http://localhost:3001/CreateColor", {
+    Axios.post("https://bathhut-api.herokuapp.com/CreateColor", {
       color: color,
     }).then(() => {
       alert("Item Uploaded");

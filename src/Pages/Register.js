@@ -8,7 +8,7 @@ function Register() {
   const [roleReg, setRoleReg] = useState("");
 
   const register = () => {
-    Axios.post("http://localhost:3001/Register", {
+    Axios.post("https://bathhut-api.herokuapp.com/Register", {
       username: usernameReg,
       password: passwordReg,
       role: roleReg,

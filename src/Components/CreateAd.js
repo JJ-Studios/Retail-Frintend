@@ -32,15 +32,19 @@ function CreateAd() {
   const [brandList, setBrandList] = useState([]);
 
   const getCategories = () => {
-    Axios.get("http://localhost:3001/GetCategories").then((response) => {
-      setCategoryList(response.data);
-    });
+    Axios.get("https://bathhut-api.herokuapp.com/GetCategories").then(
+      (response) => {
+        setCategoryList(response.data);
+      }
+    );
   };
 
   const getBrands = () => {
-    Axios.get("http://localhost:3001/GetBrands").then((response) => {
-      setBrandList(response.data);
-    });
+    Axios.get("https://bathhut-api.herokuapp.com/GetBrands").then(
+      (response) => {
+        setBrandList(response.data);
+      }
+    );
   };
 
   //useEffect(() => getCategory(adSubCategory), []);
@@ -57,14 +61,14 @@ function CreateAd() {
 
     formData.append("image", image);
 
-    fetch("http://localhost:3001/UploadImage", {
+    fetch("https://bathhut-api.herokuapp.com/UploadImage", {
       method: "post",
       body: formData,
     });
   };
 
   const addListing = () => {
-    Axios.post("http://localhost:3001/CreateAd", {
+    Axios.post("https://bathhut-api.herokuapp.com/CreateAd", {
       title: title,
       category: category,
       brand: brand,

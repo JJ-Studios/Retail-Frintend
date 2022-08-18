@@ -33,13 +33,15 @@ function ViewProductBrand() {
 
   // get ads from database
   const getAds = (category) => {
-    Axios.get(`http://localhost:3001/GetBrand/${category}`).then((response) => {
-      setAdList(response.data);
-    });
+    Axios.get(`https://bathhut-api.herokuapp.com/GetBrand/${category}`).then(
+      (response) => {
+        setAdList(response.data);
+      }
+    );
   };
 
   const editAdName = (id) => {
-    Axios.put("http://localhost:3001/EditAd", {
+    Axios.put("https://bathhut-api.herokuapp.com/EditAd", {
       name: newName,
       category: newCategory,
       description: newDescription,
@@ -52,19 +54,23 @@ function ViewProductBrand() {
   };
 
   const getCategories = () => {
-    Axios.get("http://localhost:3001/GetCategories").then((response) => {
-      setCategoryList(response.data);
-    });
+    Axios.get("https://bathhut-api.herokuapp.com/GetCategories").then(
+      (response) => {
+        setCategoryList(response.data);
+      }
+    );
   };
 
   const getBrands = () => {
-    Axios.get("http://localhost:3001/GetBrands").then((response) => {
-      setBrandList(response.data);
-    });
+    Axios.get("https://bathhut-api.herokuapp.com/GetBrands").then(
+      (response) => {
+        setBrandList(response.data);
+      }
+    );
   };
 
   const editName = (id) => {
-    Axios.put("http://localhost:3001/EditAdName", {
+    Axios.put("https://bathhut-api.herokuapp.com/EditAdName", {
       name: newName,
       id: id,
     });
@@ -72,7 +78,7 @@ function ViewProductBrand() {
   };
 
   const editAdPrice = (id) => {
-    Axios.put("http://localhost:3001/EditPrice", {
+    Axios.put("https://bathhut-api.herokuapp.com/EditPrice", {
       price: newPrice,
       id: id,
     });
@@ -80,7 +86,7 @@ function ViewProductBrand() {
   };
 
   const editAdPriceHigh = (id) => {
-    Axios.put("http://localhost:3001/EditPriceHigh", {
+    Axios.put("https://bathhut-api.herokuapp.com/EditPriceHigh", {
       price: newPriceHigh,
       id: id,
     });
@@ -88,7 +94,7 @@ function ViewProductBrand() {
   };
 
   const editAdCategory = (id) => {
-    Axios.put("http://localhost:3001/EditAdCategory", {
+    Axios.put("https://bathhut-api.herokuapp.com/EditAdCategory", {
       category: newCategory,
       subCategory: newSubCategory,
       id: id,
@@ -96,21 +102,21 @@ function ViewProductBrand() {
   };
 
   const editAdBrand = (id) => {
-    Axios.put("http://localhost:3001/EditAdBrand", {
+    Axios.put("https://bathhut-api.herokuapp.com/EditAdBrand", {
       brand: newBrand,
       id: id,
     });
   };
 
   const editAdStatus = (id) => {
-    Axios.put("http://localhost:3001/EditAdStatus", {
+    Axios.put("https://bathhut-api.herokuapp.com/EditAdStatus", {
       status: newStatus,
       id: id,
     });
   };
 
   const editAdSizes = (id) => {
-    Axios.put("http://localhost:3001/EditAdSizes", {
+    Axios.put("https://bathhut-api.herokuapp.com/EditAdSizes", {
       adExtraExtraSmall: adExtraExtraSmall,
       adExtraSmall: adExtraSmall,
       adSmall: adSmall,
@@ -126,7 +132,9 @@ function ViewProductBrand() {
   };
 
   const deleteAd = (id, imageID) => {
-    Axios.delete(`http://localhost:3001/DeleteItem/${id}/${imageID}`);
+    Axios.delete(
+      `https://bathhut-api.herokuapp.com/DeleteItem/${id}/${imageID}`
+    );
     window.location.reload(false);
   };
 

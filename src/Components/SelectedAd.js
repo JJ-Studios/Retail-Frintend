@@ -23,26 +23,30 @@ function SelectedAd() {
   // setSessionStorage("singleProduct", globalVariable.singleProduct);
 
   const getScents = () => {
-    Axios.get("http://localhost:3001/GetScents").then((response) => {
-      setScentList(response.data);
-    });
+    Axios.get("https://bathhut-api.herokuapp.com/GetScents").then(
+      (response) => {
+        setScentList(response.data);
+      }
+    );
   };
 
   const getColors = () => {
-    Axios.get("http://localhost:3001/GetColors").then((response) => {
-      setColorList(response.data);
-    });
+    Axios.get("https://bathhut-api.herokuapp.com/GetColors").then(
+      (response) => {
+        setColorList(response.data);
+      }
+    );
   };
 
   const editAdStatus = (id) => {
-    Axios.put("http://localhost:3001/EditAdStatus", {
+    Axios.put("https://bathhut-api.herokuapp.com/EditAdStatus", {
       status: newStatus,
       id: id,
     });
   };
 
   const editAdQuantity = (id) => {
-    Axios.put("http://localhost:3001/EditAdQuantity", {
+    Axios.put("https://bathhut-api.herokuapp.com/EditAdQuantity", {
       newQty: newQty,
       id: id,
     });

@@ -19,13 +19,15 @@ function ViewScentsComponent() {
   numTotalItems = scentList.length;
 
   const getScents = () => {
-    Axios.get("http://localhost:3001/GetScents").then((response) => {
-      setScentList(response.data);
-    });
+    Axios.get("https://bathhut-api.herokuapp.com/GetScents").then(
+      (response) => {
+        setScentList(response.data);
+      }
+    );
   };
 
   const editScent = (id) => {
-    Axios.put("http://localhost:3001/EditScent", {
+    Axios.put("https://bathhut-api.herokuapp.com/EditScent", {
       name: newName,
       description: newDescription,
       id: id,
@@ -34,12 +36,12 @@ function ViewScentsComponent() {
   };
 
   const deleteScent = (id) => {
-    Axios.delete(`http://localhost:3001/DeleteScent/${id}`);
+    Axios.delete(`https://bathhut-api.herokuapp.com/DeleteScent/${id}`);
     window.location.reload(false);
   };
 
   const createScent = () => {
-    Axios.post("http://localhost:3001/CreateScent", {
+    Axios.post("https://bathhut-api.herokuapp.com/CreateScent", {
       name: name,
       description: description,
     }).then(() => {

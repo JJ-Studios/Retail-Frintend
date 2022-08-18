@@ -12,7 +12,7 @@ function Login() {
 
   const login = (e) => {
     e.preventDefault();
-    Axios.post("http://localhost:3001/Login", {
+    Axios.post("https://bathhut-api.herokuapp.com/Login", {
       username: username,
       password: password,
     }).then((response) => {
@@ -28,7 +28,7 @@ function Login() {
 
   const [loginStatus, setloginStatus] = useState("");
   useEffect(() => {
-    Axios.get("http://localhost:3001/Login").then((response) => {
+    Axios.get("https://bathhut-api.herokuapp.com/Login").then((response) => {
       if (response.data.loggedIn === true)
         setloginStatus(response.data.user[0].username);
     });

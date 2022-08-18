@@ -17,13 +17,15 @@ function ViewBrandsComponent() {
   numTotalItems = brandList.length;
 
   const getCategories = () => {
-    Axios.get("http://localhost:3001/GetBrands").then((response) => {
-      setBrandList(response.data);
-    });
+    Axios.get("https://bathhut-api.herokuapp.com/GetBrands").then(
+      (response) => {
+        setBrandList(response.data);
+      }
+    );
   };
 
   const editCategory = (id) => {
-    Axios.put("http://localhost:3001/EditBrand", {
+    Axios.put("https://bathhut-api.herokuapp.com/EditBrand", {
       brand: newBrand,
       id: id,
     });
@@ -31,12 +33,12 @@ function ViewBrandsComponent() {
   };
 
   const deleteCategory = (id) => {
-    Axios.delete(`http://localhost:3001/DeleteBrand/${id}`);
+    Axios.delete(`https://bathhut-api.herokuapp.com/DeleteBrand/${id}`);
     window.location.reload(false);
   };
 
   const createCategory = () => {
-    Axios.post("http://localhost:3001/CreateBrand", {
+    Axios.post("https://bathhut-api.herokuapp.com/CreateBrand", {
       brand: brand,
     }).then(() => {
       alert("Item Uploaded");

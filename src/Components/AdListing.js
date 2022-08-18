@@ -10,9 +10,11 @@ function AdListing() {
 
   // get ads from database
   const getAds = () => {
-    Axios.get("http://localhost:3001/GetAllAds").then((response) => {
-      setAdList(response.data);
-    });
+    Axios.get("https://bathhut-api.herokuapp.com/GetAllAds").then(
+      (response) => {
+        setAdList(response.data);
+      }
+    );
   };
 
   useEffect(() => getAds(getSessionStorage("productItem")), []);

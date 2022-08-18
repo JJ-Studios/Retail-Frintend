@@ -12,9 +12,11 @@ function GalleryComponent() {
 
   // get ads from database
   const getAds = () => {
-    Axios.get("http://localhost:3001/GetAllBulkAds").then((response) => {
-      setAdList(response.data);
-    });
+    Axios.get("https://bathhut-api.herokuapp.com/GetAllBulkAds").then(
+      (response) => {
+        setAdList(response.data);
+      }
+    );
   };
 
   useEffect(() => getAds(), []);

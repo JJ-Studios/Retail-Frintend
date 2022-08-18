@@ -13,7 +13,7 @@ function CategoryGiftsComponent() {
 
   // get ads from database
   const getGifts = (category) => {
-    Axios.get(`http://localhost:3001/GetProduct/${category}`).then(
+    Axios.get(`https://bathhut-api.herokuapp.com/GetProduct/${category}`).then(
       (response) => {
         setGiftsList(response.data);
       }

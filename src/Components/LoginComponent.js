@@ -9,7 +9,7 @@ function LoginComponent() {
   let navigate = useNavigate();
 
   const login = () => {
-    Axios.post("http://localhost:3001/Login", {
+    Axios.post("https://bathhut-api.herokuapp.com/Login", {
       username: username,
       password: password,
     }).then((response) => {

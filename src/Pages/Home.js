@@ -19,7 +19,7 @@ function Home() {
 
   // get ads from database
   const getAds = (category) => {
-    Axios.get(`http://localhost:3001/GetProduct/${category}`).then(
+    Axios.get(`https://bathhut-api.herokuapp.com/GetProduct/${category}`).then(
       (response) => {
         setAdList(response.data);
       }

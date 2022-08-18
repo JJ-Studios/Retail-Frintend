@@ -19,7 +19,7 @@ function CategoryJewelryComponent() {
 
   // get ads from database
   const getBracelets = (category) => {
-    Axios.get(`http://localhost:3001/GetProduct/${category}`).then(
+    Axios.get(`https://bathhut-api.herokuapp.com/GetProduct/${category}`).then(
       (response) => {
         setBraceletsList(response.data);
       }
@@ -27,7 +27,7 @@ function CategoryJewelryComponent() {
   };
 
   const getEarrings = (category) => {
-    Axios.get(`http://localhost:3001/GetProduct/${category}`).then(
+    Axios.get(`https://bathhut-api.herokuapp.com/GetProduct/${category}`).then(
       (response) => {
         setEarringsList(response.data);
       }
@@ -35,7 +35,7 @@ function CategoryJewelryComponent() {
   };
 
   const getNecklaces = (category) => {
-    Axios.get(`http://localhost:3001/GetProduct/${category}`).then(
+    Axios.get(`https://bathhut-api.herokuapp.com/GetProduct/${category}`).then(
       (response) => {
         setNecklacesList(response.data);
       }
@@ -43,7 +43,7 @@ function CategoryJewelryComponent() {
   };
 
   const getRings = (category) => {
-    Axios.get(`http://localhost:3001/GetProduct/${category}`).then(
+    Axios.get(`https://bathhut-api.herokuapp.com/GetProduct/${category}`).then(
       (response) => {
         setRingsList(response.data);
       }

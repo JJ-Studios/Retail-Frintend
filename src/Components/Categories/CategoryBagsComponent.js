@@ -24,31 +24,37 @@ function CategoryBagsComponent() {
 
   // get ads from database
   const getAds = () => {
-    Axios.get("http://localhost:3001/GetBags").then((response) => {
+    Axios.get("https://bathhut-api.herokuapp.com/GetBags").then((response) => {
       setAdList(response.data);
     });
   };
 
   const getConsuela = (category) => {
-    Axios.get(`http://localhost:3001/GetBrand/${category}`).then((response) => {
-      setConsuelaList(response.data);
-    });
+    Axios.get(`https://bathhut-api.herokuapp.com/GetBrand/${category}`).then(
+      (response) => {
+        setConsuelaList(response.data);
+      }
+    );
   };
 
   const getBoggbags = (category) => {
-    Axios.get(`http://localhost:3001/GetBrand/${category}`).then((response) => {
-      setBoggList(response.data);
-    });
+    Axios.get(`https://bathhut-api.herokuapp.com/GetBrand/${category}`).then(
+      (response) => {
+        setBoggList(response.data);
+      }
+    );
   };
 
   const getSimplyTote = (category) => {
-    Axios.get(`http://localhost:3001/GetBrand/${category}`).then((response) => {
-      setSimplyList(response.data);
-    });
+    Axios.get(`https://bathhut-api.herokuapp.com/GetBrand/${category}`).then(
+      (response) => {
+        setSimplyList(response.data);
+      }
+    );
   };
 
   const getBackpacks = (category) => {
-    Axios.get(`http://localhost:3001/GetProduct/${category}`).then(
+    Axios.get(`https://bathhut-api.herokuapp.com/GetProduct/${category}`).then(
       (response) => {
         setBackpackList(response.data);
       }
@@ -56,7 +62,7 @@ function CategoryBagsComponent() {
   };
 
   const getHandbags = (category) => {
-    Axios.get(`http://localhost:3001/GetProduct/${category}`).then(
+    Axios.get(`https://bathhut-api.herokuapp.com/GetProduct/${category}`).then(
       (response) => {
         setHandbagList(response.data);
       }
@@ -64,7 +70,7 @@ function CategoryBagsComponent() {
   };
 
   const getSpecialty = (category) => {
-    Axios.get(`http://localhost:3001/GetProduct/${category}`).then(
+    Axios.get(`https://bathhut-api.herokuapp.com/GetProduct/${category}`).then(
       (response) => {
         setSpecialtyList(response.data);
       }
@@ -72,7 +78,7 @@ function CategoryBagsComponent() {
   };
 
   const getWallets = (category) => {
-    Axios.get(`http://localhost:3001/GetProduct/${category}`).then(
+    Axios.get(`https://bathhut-api.herokuapp.com/GetProduct/${category}`).then(
       (response) => {
         setWalletList(response.data);
       }

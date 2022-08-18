@@ -17,9 +17,11 @@ function CategoryBrandComponent() {
 
   // get ads from database
   const getAds = (category) => {
-    Axios.get(`http://localhost:3001/GetBrand/${category}`).then((response) => {
-      setAdList(response.data);
-    });
+    Axios.get(`https://bathhut-api.herokuapp.com/GetBrand/${category}`).then(
+      (response) => {
+        setAdList(response.data);
+      }
+    );
   };
 
   useEffect(() => getAds(getSessionStorage("productItem")), []);

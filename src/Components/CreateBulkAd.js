@@ -21,14 +21,14 @@ function CreateBulkAd() {
 
     formData.append("image", image);
 
-    fetch("http://localhost:3001/UploadBulkImage", {
+    fetch("https://bathhut-api.herokuapp.com/UploadBulkImage", {
       method: "post",
       body: formData,
     });
   };
 
   const addListing = () => {
-    Axios.post("http://localhost:3001/CreateBulkAd", {
+    Axios.post("https://bathhut-api.herokuapp.com/CreateBulkAd", {
       brand: brand,
       itemType: itemType,
       priceLow: priceLow,

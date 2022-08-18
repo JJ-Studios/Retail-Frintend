@@ -25,13 +25,15 @@ function CategoryClothingComponent() {
 
   // get ads from database
   const getAds = () => {
-    Axios.get("http://localhost:3001/GetClothing").then((response) => {
-      setAdList(response.data);
-    });
+    Axios.get("https://bathhut-api.herokuapp.com/GetClothing").then(
+      (response) => {
+        setAdList(response.data);
+      }
+    );
   };
 
   const getShirts = (category) => {
-    Axios.get(`http://localhost:3001/GetProduct/${category}`).then(
+    Axios.get(`https://bathhut-api.herokuapp.com/GetProduct/${category}`).then(
       (response) => {
         setShirtsList(response.data);
       }
@@ -39,7 +41,7 @@ function CategoryClothingComponent() {
   };
 
   const getHats = (category) => {
-    Axios.get(`http://localhost:3001/GetProduct/${category}`).then(
+    Axios.get(`https://bathhut-api.herokuapp.com/GetProduct/${category}`).then(
       (response) => {
         setHatsList(response.data);
       }
@@ -47,7 +49,7 @@ function CategoryClothingComponent() {
   };
 
   const getPants = (category) => {
-    Axios.get(`http://localhost:3001/GetProduct/${category}`).then(
+    Axios.get(`https://bathhut-api.herokuapp.com/GetProduct/${category}`).then(
       (response) => {
         setPantsList(response.data);
       }
@@ -71,7 +73,7 @@ function CategoryClothingComponent() {
   };*/
 
   const getJackets = (category) => {
-    Axios.get(`http://localhost:3001/GetProduct/${category}`).then(
+    Axios.get(`https://bathhut-api.herokuapp.com/GetProduct/${category}`).then(
       (response) => {
         setJacketsList(response.data);
       }
@@ -79,7 +81,7 @@ function CategoryClothingComponent() {
   };
 
   const getRainWrap = (category) => {
-    Axios.get(`http://localhost:3001/GetProduct/${category}`).then(
+    Axios.get(`https://bathhut-api.herokuapp.com/GetProduct/${category}`).then(
       (response) => {
         setRainWrapList(response.data);
       }

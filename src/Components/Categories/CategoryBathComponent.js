@@ -19,13 +19,13 @@ function CategoryBathComponent() {
 
   // get ads from database
   const getAds = () => {
-    Axios.get("http://localhost:3001/GetBath").then((response) => {
+    Axios.get("https://bathhut-api.herokuapp.com/GetBath").then((response) => {
       setAdList(response.data);
     });
   };
 
   const getScrubs = (category) => {
-    Axios.get(`http://localhost:3001/GetProduct/${category}`).then(
+    Axios.get(`https://bathhut-api.herokuapp.com/GetProduct/${category}`).then(
       (response) => {
         setScrubList(response.data);
       }
@@ -33,7 +33,7 @@ function CategoryBathComponent() {
   };
 
   const getCandles = (category) => {
-    Axios.get(`http://localhost:3001/GetProduct/${category}`).then(
+    Axios.get(`https://bathhut-api.herokuapp.com/GetProduct/${category}`).then(
       (response) => {
         setCandleList(response.data);
       }
@@ -41,7 +41,7 @@ function CategoryBathComponent() {
   };
 
   const getFragrances = (category) => {
-    Axios.get(`http://localhost:3001/GetProduct/${category}`).then(
+    Axios.get(`https://bathhut-api.herokuapp.com/GetProduct/${category}`).then(
       (response) => {
         setFragranceList(response.data);
       }
@@ -49,7 +49,7 @@ function CategoryBathComponent() {
   };
 
   const getSoaps = (category) => {
-    Axios.get(`http://localhost:3001/GetProduct/${category}`).then(
+    Axios.get(`https://bathhut-api.herokuapp.com/GetProduct/${category}`).then(
       (response) => {
         setSoapList(response.data);
       }

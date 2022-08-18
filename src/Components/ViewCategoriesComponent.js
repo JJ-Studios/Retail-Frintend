@@ -19,13 +19,15 @@ function ViewCategoriesComponent() {
   numTotalItems = categoryList.length;
 
   const getCategories = () => {
-    Axios.get("http://localhost:3001/GetCategories").then((response) => {
-      setCategoryList(response.data);
-    });
+    Axios.get("https://bathhut-api.herokuapp.com/GetCategories").then(
+      (response) => {
+        setCategoryList(response.data);
+      }
+    );
   };
 
   const editCategory = (id) => {
-    Axios.put("http://localhost:3001/EditCategory", {
+    Axios.put("https://bathhut-api.herokuapp.com/EditCategory", {
       primaryCategory: newPrimaryCategory,
       subCategory: newSubCategory,
       id: id,
@@ -34,12 +36,12 @@ function ViewCategoriesComponent() {
   };
 
   const deleteCategory = (id) => {
-    Axios.delete(`http://localhost:3001/DeleteCategory/${id}`);
+    Axios.delete(`https://bathhut-api.herokuapp.com/DeleteCategory/${id}`);
     window.location.reload(false);
   };
 
   const createCategory = () => {
-    Axios.post("http://localhost:3001/CreateCategory", {
+    Axios.post("https://bathhut-api.herokuapp.com/CreateCategory", {
       primaryCategory: primaryCategory,
       subCategory: subCategory,
     }).then(() => {
