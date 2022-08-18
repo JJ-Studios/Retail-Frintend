@@ -1,0 +1,60 @@
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.card img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.card {
+  margin: 0 0.5em;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  border: none;
+  border-radius: 0;
+}
+.carousel-inner {
+  padding: 1em;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: #e1e1e1;
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (min-width: 768px) {
+  .card img {
+    height: 11em;
+  }
+}
+
+.status h1 {
+  font-size: 100%;
+  align-items: center;
+  padding-left: 10%;
+  margin-top: -4%;
+}
+
+.pictures {
+  width: 320px;
+  height: 415px;
+}
+
+.size {
+  height: auto;
+  max-height: 250px;
+  width: auto;
+  max-width: 250px;
+}
+
+.number {
+  padding: 0 2px;
+  background-color: pink;
+  color: white;
+  font-weight: bolx;
+  border-radius: 5px;
+  position: relative;
+  top: -12px;
+}
