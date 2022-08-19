@@ -458,7 +458,7 @@ function Header() {
                       <Link
                         className="nav-link dropdown-toggle"
                         data-toggle="dropdown"
-                        to="/Jewelry"
+                        to="/CategoryJewelry"
                         style={{ fontSize: "23px" }}
                       >
                         Jewelry
