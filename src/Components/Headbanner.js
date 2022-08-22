@@ -299,17 +299,37 @@ function Headbanner() {
                         </Link>
                       </li>
                     )}
-
-                    <li className="nav-item">
-                      <Link
-                        className="nav-link"
-                        to="/ContactUs"
-                        onClick={scrollToTop}
-                        style={{ fontSize: "25px" }}
-                      >
-                        Contact Us
-                      </Link>
-                    </li>
+                    {window.location.pathname === "/ContactUs" && (
+                      <li className="nav-item active">
+                        <Link
+                          className="nav-link dropdown-toggle"
+                          data-toggle="dropdown"
+                          to="/ContactUs"
+                          onClick={scrollToTop}
+                          style={{ fontSize: "25px" }}
+                        >
+                          Contact Us
+                          {/*<span>
+                          <i className="fa fa-angle-down"></i>
+                        </span>*/}
+                        </Link>
+                      </li>
+                    )}
+                    {window.location.pathname !== "/ContactUs" && (
+                      <li className="nav-item">
+                        <Link
+                          className="nav-link"
+                          to="/ContactUs"
+                          onClick={scrollToTop}
+                          style={{ fontSize: "25px" }}
+                        >
+                          Contact Us
+                          {/*<span>
+                          <i className="fa fa-angle-down"></i>
+                        </span>*/}
+                        </Link>
+                      </li>
+                    )}
                   </ul>
 
                   <ul className="navbar-nav ml-auto mt-10">
