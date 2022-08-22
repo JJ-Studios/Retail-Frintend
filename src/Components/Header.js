@@ -124,7 +124,8 @@ function Header() {
                 >
                   <ul className="navbar-nav ml-auto main-nav">
                     {/**"nav-item active" */}
-                    <li className={isActive ? "nav-item active" : "nav-item"}>
+
+                    <li className="nav-item active">
                       <Link
                         className="nav-link"
                         to="/Home"

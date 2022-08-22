@@ -5,21 +5,12 @@ import "./Component.css";
 
 function Headbanner() {
   //  const { product, setProduct } = useContext(productType);
-  const [isBath, setIsBath] = useState(false);
-  const [isBags, setIsBags] = useState(false);
-  const [isClothing, setIsClothing] = useState(false);
-  const [isJewelry, setIsJewelry] = useState(false);
-  const [isGifts, setIsGifts] = useState(false);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth", // for smoothly scrolling
     });
-  };
-
-  const handleClick = (event) => {
-    setIsBath((current) => !current);
   };
 
   return (
@@ -143,435 +134,172 @@ function Headbanner() {
                     {/*Clothes tab*/}
 
                     {/*Bath tab*/}
-                    <li className={isBath ? "nav-item active" : "nav-item"}>
-                      <Link
-                        className="nav-link dropdown-toggle"
-                        data-toggle="dropdown"
-                        to="/CategoryBath"
-                        onClick={() => {
-                          scrollToTop();
-                          handleClick();
-                        }}
-                        style={{ fontSize: "25px" }}
-                      >
-                        Bath & Body
-                        {/*<span>
-                          <i className="fa fa-angle-down"></i>
-                        </span>*/}
-                      </Link>
-
-                      {/*<!-- Dropdown list -->*/}
-                      {/*<div className="dropdown-menu">
+                    {window.location.pathname === "/CategoryBath" && (
+                      <li className="nav-item active">
                         <Link
-                          className="dropdown-item"
+                          className="nav-link dropdown-toggle"
+                          data-toggle="dropdown"
                           to="/CategoryBath"
                           onClick={scrollToTop}
+                          style={{ fontSize: "25px" }}
                         >
-                          All Bath & Body
+                          Bath & Body
+                          {/*<span>
+                          <i className="fa fa-angle-down"></i>
+                        </span>*/}
                         </Link>
+                      </li>
+                    )}
+                    {window.location.pathname !== "/CategoryBath" && (
+                      <li className="nav-item">
                         <Link
-                          className="dropdown-item"
-                          to="/CategoryProduct"
+                          className="nav-link dropdown-toggle"
+                          data-toggle="dropdown"
+                          to="/CategoryBath"
                           onClick={() => {
-                            setSessionStorage("productItem", "Scrubs");
-
                             scrollToTop();
-                            if (
-                              window.location.pathname === "/CategoryProduct"
-                            ) {
-                              window.location.reload(false);
-                            }
-                            //window.location.reload(false);
                           }}
+                          style={{ fontSize: "25px" }}
                         >
-                          Custom Products
+                          Bath & Body
+                          {/*<span>
+                          <i className="fa fa-angle-down"></i>
+                        </span>*/}
                         </Link>
-                        <Link
-                          className="dropdown-item"
-                          to="/CategoryProduct"
-                          onClick={() => {
-                            setSessionStorage("productItem", "Candles");
-
-                            scrollToTop();
-                            if (
-                              window.location.pathname === "/CategoryProduct"
-                            ) {
-                              window.location.reload(false);
-                            }
-                            //window.location.reload(false);
-                          }}
-                        >
-                          Candles
-                        </Link>
-
-                        <Link
-                          className="dropdown-item"
-                          to="/CategoryProduct"
-                          onClick={() => {
-                            setSessionStorage("productItem", "Soap");
-
-                            scrollToTop();
-                            if (
-                              window.location.pathname === "/CategoryProduct"
-                            ) {
-                              window.location.reload(false);
-                            }
-                            //window.location.reload(false);
-                          }}
-                        >
-                          Soap
-                        </Link>
-                      </div>*/}
-                    </li>
+                      </li>
+                    )}
 
                     {/*Bag tab*/}
-                    <li className="nav-item dropdown dropdown-slide">
-                      <Link
-                        className="nav-link dropdown-toggle"
-                        data-toggle="dropdown"
-                        to="/CategoryBags"
-                        style={{ fontSize: "25px" }}
-                      >
-                        Bags
-                        {/*<span>
-                          <i className="fa fa-angle-down"></i>
-                        </span>*/}
-                      </Link>
-
-                      {/*<!-- Dropdown list -->*/}
-                      {/*<div className="dropdown-menu">
+                    {window.location.pathname === "/CategoryBags" && (
+                      <li className="nav-item active">
                         <Link
-                          className="dropdown-item"
+                          className="nav-link dropdown-toggle"
+                          data-toggle="dropdown"
                           to="/CategoryBags"
                           onClick={scrollToTop}
+                          style={{ fontSize: "25px" }}
                         >
                           Bags
-                        </Link>
-                        <Link
-                          className="dropdown-item"
-                          to="/CategoryBrand"
-                          onClick={() => {
-                            setSessionStorage("productItem", "Consuela");
-
-                            scrollToTop();
-                            if (window.location.pathname === "/CategoryBrand") {
-                              window.location.reload(false);
-                            }
-                            //window.location.reload(false);
-                          }}
-                        >
-                          Consuela
-                        </Link>
-                        <Link
-                          className="dropdown-item"
-                          to="/CategoryBrand"
-                          onClick={() => {
-                            setSessionStorage("productItem", "Bogg");
-
-                            scrollToTop();
-                            if (window.location.pathname === "/CategoryBrand") {
-                              window.location.reload(false);
-                            }
-                            //window.location.reload(false);
-                          }}
-                        >
-                          Bogg
-                        </Link>
-                        <Link
-                          className="dropdown-item"
-                          to="/CategoryBrand"
-                          onClick={() => {
-                            setSessionStorage("productItem", "Simply Tote");
-
-                            scrollToTop();
-                            if (window.location.pathname === "/CategoryBrand") {
-                              window.location.reload(false);
-                            }
-                            //window.location.reload(false);
-                          }}
-                        >
-                          Simply Tote
-                        </Link>
-                        <Link
-                          className="dropdown-item"
-                          to="/CategoryProduct"
-                          onClick={() => {
-                            setSessionStorage(
-                              "productItem",
-                              "Specialty Handbags"
-                            );
-
-                            scrollToTop();
-                            if (
-                              window.location.pathname === "/CategoryProduct"
-                            ) {
-                              window.location.reload(false);
-                            }
-                            //window.location.reload(false);
-                          }}
-                        >
-                          Specialty Handbags
-                        </Link>
-                        <Link
-                          className="dropdown-item"
-                          to="/CategoryProduct"
-                          onClick={() => {
-                            setSessionStorage("productItem", "Wallets");
-
-                            scrollToTop();
-                            if (
-                              window.location.pathname === "/CategoryProduct"
-                            ) {
-                              window.location.reload(false);
-                            }
-                            //window.location.reload(false);
-                          }}
-                        >
-                          Wallets
-                        </Link>
-                      </div>*/}
-                    </li>
-
-                    <li className="nav-item dropdown dropdown-slide">
-                      <Link
-                        className="nav-link dropdown-toggle"
-                        data-toggle="dropdown"
-                        to="/CategoryClothing"
-                        style={{ fontSize: "25px" }}
-                      >
-                        Clothing
-                        {/*<span>
+                          {/*<span>
                           <i className="fa fa-angle-down"></i>
                         </span>*/}
-                      </Link>
-
-                      {/*<!-- Dropdown list -->*/}
-                      {/*<div className="dropdown-menu">
+                        </Link>
+                      </li>
+                    )}
+                    {window.location.pathname !== "/CategoryBags" && (
+                      <li className="nav-item">
                         <Link
-                          className="dropdown-item"
+                          className="nav-link dropdown-toggle"
+                          data-toggle="dropdown"
+                          to="/CategoryBags"
+                          onClick={scrollToTop}
+                          style={{ fontSize: "25px" }}
+                        >
+                          Bags
+                          {/*<span>
+                          <i className="fa fa-angle-down"></i>
+                        </span>*/}
+                        </Link>
+                      </li>
+                    )}
+
+                    {window.location.pathname === "/CategoryClothing" && (
+                      <li className="nav-item active">
+                        <Link
+                          className="nav-link dropdown-toggle"
+                          data-toggle="dropdown"
                           to="/CategoryClothing"
                           onClick={scrollToTop}
+                          style={{ fontSize: "25px" }}
                         >
-                          All Clothing
-                        </Link>
-                        <Link
-                          className="dropdown-item"
-                          to="/CategoryProduct"
-                          onClick={() => {
-                            setSessionStorage("productItem", "Hats");
-
-                            scrollToTop();
-                            if (
-                              window.location.pathname === "/CategoryProduct"
-                            ) {
-                              window.location.reload(false);
-                            }
-                            //window.location.reload(false);
-                          }}
-                        >
-                          Hats
-                        </Link>
-                        <Link
-                          className="dropdown-item"
-                          to="/CategoryProduct"
-                          onClick={() => {
-                            setSessionStorage("productItem", "Shirts");
-
-                            scrollToTop();
-                            if (
-                              window.location.pathname === "/CategoryProduct"
-                            ) {
-                              window.location.reload(false);
-                            }
-                            //window.location.reload(false);
-                          }}
-                        >
-                          Shirts
-                        </Link>
-                        {/*<Link
-                          className="dropdown-item"
-                          to="/CategoryProduct"
-                          onClick={() => {
-                            setSessionStorage("productItem", "Pants");
-
-                            scrollToTop();
-                            if (
-                              window.location.pathname === "/CategoryProduct"
-                            ) {
-                              window.location.reload(false);
-                            }
-                            //window.location.reload(false);
-                          }}
-                        >
-                          Pants
-                        </Link>
-                        {/*<Link
-                          className="dropdown-item"
-                          to="/CategoryProduct"
-                          onClick={() => {
-                            setSessionStorage("productItem", "Shorts");
-
-                            scrollToTop();
-                            if (
-                              window.location.pathname === "/CategoryProduct"
-                            ) {
-                              window.location.reload(false);
-                            }
-                            //window.location.reload(false);
-                          }}
-                        >
-                          Shorts
-                        </Link>
-                        <Link
-                          className="dropdown-item"
-                          to="/CategoryProduct"
-                          onClick={() => {
-                            setSessionStorage("productItem", "Jackets");
-
-                            scrollToTop();
-                            if (
-                              window.location.pathname === "/CategoryProduct"
-                            ) {
-                              window.location.reload(false);
-                            }
-                            //window.location.reload(false);
-                          }}
-                        >
-                          Jackets
-                        </Link>
-                        <Link
-                          className="dropdown-item"
-                          to="/CategoryProduct"
-                          onClick={() => {
-                            setSessionStorage("productItem", "Rain Wraps");
-
-                            scrollToTop();
-                            if (
-                              window.location.pathname === "/CategoryProduct"
-                            ) {
-                              window.location.reload(false);
-                            }
-                            //window.location.reload(false);
-                          }}
-                        >
-                          Rain Wraps
-                        </Link>
-                      </div>*/}
-                    </li>
-
-                    {/*Jewelry tab*/}
-                    <li className="nav-item dropdown dropdown-slide">
-                      <Link
-                        className="nav-link dropdown-toggle"
-                        data-toggle="dropdown"
-                        to="/CategoryJewelry"
-                        style={{ fontSize: "25px" }}
-                      >
-                        Jewelry
-                        {/*<span>
+                          Clothing
+                          {/*<span>
                           <i className="fa fa-angle-down"></i>
                         </span>*/}
-                      </Link>
-
-                      {/*<!-- Dropdown list -->*/}
-                      {/*<div className="dropdown-menu">
+                        </Link>
+                      </li>
+                    )}
+                    {window.location.pathname !== "/CategoryClothing" && (
+                      <li className="nav-item">
                         <Link
-                          className="dropdown-item"
+                          className="nav-link dropdown-toggle"
+                          data-toggle="dropdown"
+                          to="/CategoryClothing"
+                          onClick={scrollToTop}
+                          style={{ fontSize: "25px" }}
+                        >
+                          Clothing
+                          {/*<span>
+                          <i className="fa fa-angle-down"></i>
+                        </span>*/}
+                        </Link>
+                      </li>
+                    )}
+                    {window.location.pathname === "/CategoryJewelry" && (
+                      <li className="nav-item active">
+                        <Link
+                          className="nav-link dropdown-toggle"
+                          data-toggle="dropdown"
                           to="/CategoryJewelry"
                           onClick={scrollToTop}
+                          style={{ fontSize: "25px" }}
                         >
-                          All Jewelry
-                        </Link>
-
-                        <Link
-                          className="dropdown-item"
-                          to="/CategoryProduct"
-                          onClick={() => {
-                            setSessionStorage("productItem", "Necklaces");
-
-                            scrollToTop();
-                            if (
-                              window.location.pathname === "/CategoryProduct"
-                            ) {
-                              window.location.reload(false);
-                            }
-                            //window.location.reload(false);
-                          }}
-                        >
-                          Necklaces
-                        </Link>
-                        <Link
-                          className="dropdown-item"
-                          to="/CategoryProduct"
-                          onClick={() => {
-                            setSessionStorage("productItem", "Earrings");
-
-                            scrollToTop();
-                            if (
-                              window.location.pathname === "/CategoryProduct"
-                            ) {
-                              window.location.reload(false);
-                            }
-                            //window.location.reload(false);
-                          }}
-                        >
-                          Earrings
-                        </Link>
-                        <Link
-                          className="dropdown-item"
-                          to="/CategoryProduct"
-                          onClick={() => {
-                            setSessionStorage("productItem", "Bracelets");
-
-                            scrollToTop();
-                            if (
-                              window.location.pathname === "/CategoryProduct"
-                            ) {
-                              window.location.reload(false);
-                            }
-                            //window.location.reload(false);
-                          }}
-                        >
-                          Bracelets
-                        </Link>
-                      </div>*/}
-                    </li>
-
-                    {/*Gifts tab*/}
-                    <li className="nav-item dropdown dropdown-slide">
-                      <Link
-                        className="nav-link dropdown-toggle"
-                        data-toggle="dropdown"
-                        to="/CategoryGifts"
-                        style={{ fontSize: "25px" }}
-                      >
-                        Gifts
-                        {/*<span>
+                          Jewelry
+                          {/*<span>
                           <i className="fa fa-angle-down"></i>
                         </span>*/}
-                      </Link>
-
-                      {/*<!-- Dropdown list -->*/}
-                      {/*<div className="dropdown-menu">
-                        <Link
-                          className="dropdown-item"
-                          to="/CategoryProduct"
-                          onClick={() => {
-                            setSessionStorage("productItem", "Gifts");
-
-                            scrollToTop();
-                            if (
-                              window.location.pathname === "/CategoryProduct"
-                            ) {
-                              window.location.reload(false);
-                            }
-                            //window.location.reload(false);
-                          }}
-                        >
-                          All Gifts
                         </Link>
-                        </div>*/}
-                    </li>
+                      </li>
+                    )}
+                    {window.location.pathname !== "/CategoryJewelry" && (
+                      <li className="nav-item">
+                        <Link
+                          className="nav-link dropdown-toggle"
+                          data-toggle="dropdown"
+                          to="/CategoryJewelry"
+                          onClick={scrollToTop}
+                          style={{ fontSize: "25px" }}
+                        >
+                          Jewelry
+                          {/*<span>
+                          <i className="fa fa-angle-down"></i>
+                        </span>*/}
+                        </Link>
+                      </li>
+                    )}
+                    {window.location.pathname === "/CategoryGifts" && (
+                      <li className="nav-item active">
+                        <Link
+                          className="nav-link dropdown-toggle"
+                          data-toggle="dropdown"
+                          to="/CategoryGifts"
+                          onClick={scrollToTop}
+                          style={{ fontSize: "25px" }}
+                        >
+                          Gifts
+                          {/*<span>
+                          <i className="fa fa-angle-down"></i>
+                        </span>*/}
+                        </Link>
+                      </li>
+                    )}
+                    {window.location.pathname !== "/CategoryGifts" && (
+                      <li className="nav-item">
+                        <Link
+                          className="nav-link dropdown-toggle"
+                          data-toggle="dropdown"
+                          to="/CategoryGifts"
+                          onClick={scrollToTop}
+                          style={{ fontSize: "25px" }}
+                        >
+                          Gifts
+                          {/*<span>
+                          <i className="fa fa-angle-down"></i>
+                        </span>*/}
+                        </Link>
+                      </li>
+                    )}
+
                     <li className="nav-item">
                       <Link
                         className="nav-link"
