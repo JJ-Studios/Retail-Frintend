@@ -149,6 +149,96 @@ function Home() {
                 </Link>
               </div>
             </div>
+
+            <div
+              className="row"
+              style={{ paddingTop: "3%", paddingBottom: "3%" }}
+            >
+              <div
+                className="col-sm-8 col-lg-3 col-md"
+                style={{ paddingBottom: "2%" }}
+              >
+                <Link
+                  to="/CategoryBrand"
+                  onClick={() => {
+                    setSessionStorage("productItem", "Consuela");
+                    scrollToTop();
+                    if (window.location.pathname === "/CategoryBrand") {
+                      window.location.reload(false);
+                    }
+                    //window.location.reload(false);
+                  }}
+                >
+                  <ImageCard
+                    images="../images/Bathhut/IMG_9466.HEIC.jpg"
+                    titles="Consuela"
+                  />
+                </Link>
+              </div>
+              <div
+                className="col-sm-8 col-lg-3 col-md"
+                style={{ paddingBottom: "2%" }}
+              >
+                <Link
+                  to="/CategoryBrand"
+                  onClick={() => {
+                    setSessionStorage("productItem", "Bogg");
+                    scrollToTop();
+                    if (window.location.pathname === "/CategoryBrand") {
+                      window.location.reload(false);
+                    }
+                    //window.location.reload(false);
+                  }}
+                >
+                  <ImageCard
+                    images="../images/Bathhut/IMG_9495.HEIC.jpg"
+                    titles="Bogg"
+                  />
+                </Link>
+              </div>
+              <div
+                className="col-sm-8 col-lg-3 col-md"
+                style={{ paddingBottom: "2%" }}
+              >
+                <Link
+                  to="/CategoryBrand"
+                  onClick={() => {
+                    setSessionStorage("productItem", "Simply Tote");
+                    scrollToTop();
+                    if (window.location.pathname === "/CategoryBrand") {
+                      window.location.reload(false);
+                    }
+                    //window.location.reload(false);
+                  }}
+                >
+                  <ImageCard
+                    images="../images/Bathhut/simplytote.jpg"
+                    titles="Simply Tote"
+                  />
+                </Link>
+              </div>
+              <div
+                className="col-sm-8 col-lg-3 col-md"
+                style={{ paddingBottom: "2%" }}
+              >
+                <Link
+                  to="/CategoryProduct"
+                  onClick={() => {
+                    setSessionStorage("productItem", "Specialty Handbags");
+                    scrollToTop();
+                    if (window.location.pathname === "/CategoryProduct") {
+                      window.location.reload(false);
+                    }
+                    //window.location.reload(false);
+                  }}
+                >
+                  <ImageCard
+                    images="../images/Bathhut/specialty.jpg"
+                    titles="Specialty Bags"
+                  />
+                </Link>
+              </div>
+            </div>
             <div className="row" style={{ paddingBottom: "3%" }}>
               <div
                 className="col-sm-8 col-lg-3 col-md"
