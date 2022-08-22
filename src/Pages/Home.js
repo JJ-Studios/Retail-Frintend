@@ -106,27 +106,7 @@ function Home() {
                   />
                 </Link>
               </div>
-              <div
-                className="col-sm-8 col-lg-3 col-md"
-                style={{ paddingBottom: "2%" }}
-              >
-                <Link
-                  to="/CategoryProduct"
-                  onClick={() => {
-                    setSessionStorage("productItem", "Fragrances");
-                    scrollToTop();
-                    if (window.location.pathname === "/CategoryProduct") {
-                      window.location.reload(false);
-                    }
-                    //window.location.reload(false);
-                  }}
-                >
-                  <ImageCard
-                    images="../images/Bathhut/IMG_8046.jpg"
-                    titles="Fragances"
-                  />
-                </Link>
-              </div>
+
               <div
                 className="col-sm-8 col-lg-3 col-md"
                 style={{ paddingBottom: "2%" }}
@@ -145,6 +125,22 @@ function Home() {
                   <ImageCard
                     images="../images/Bathhut/IMG_8085.jpg"
                     titles="Soap"
+                  />
+                </Link>
+              </div>
+              <div
+                className="col-sm-8 col-lg-3 col-md"
+                style={{ paddingBottom: "2%" }}
+              >
+                <Link
+                  to="/CategoryJewelry"
+                  onClick={() => {
+                    scrollToTop();
+                  }}
+                >
+                  <ImageCard
+                    images="../images/Bathhut/IMG_1259(1).jpg"
+                    titles="Jewelry"
                   />
                 </Link>
               </div>
@@ -277,29 +273,8 @@ function Home() {
                   }}
                 >
                   <ImageCard
-                    images="../images/Bathhut/IMG_8250.jpg"
+                    images="../images/Bathhut/IMG_9490.HEIC.jpg"
                     titles="Tops"
-                  />
-                </Link>
-              </div>
-              <div
-                className="col-sm-8 col-lg-3 col-md"
-                style={{ paddingBottom: "2%" }}
-              >
-                <Link
-                  to="/CategoryProduct"
-                  onClick={() => {
-                    setSessionStorage("productItem", "Pants");
-                    scrollToTop();
-                    if (window.location.pathname === "/CategoryProduct") {
-                      window.location.reload(false);
-                    }
-                    //window.location.reload(false);
-                  }}
-                >
-                  <ImageCard
-                    images="../images/Bathhut/IMG_9300.jpg"
-                    titles="Bottoms"
                   />
                 </Link>
               </div>
@@ -319,78 +294,34 @@ function Home() {
                   }}
                 >
                   <ImageCard
-                    images="../images/Bathhut/IMG_9497.HEIC.jpg"
+                    images="../images/Bathhut/IMG_8250.jpg"
                     titles="Jackets"
                   />
                 </Link>
               </div>
-            </div>
-            <div className="row" style={{}}>
               <div
                 className="col-sm-8 col-lg-3 col-md"
                 style={{ paddingBottom: "2%" }}
               >
                 <Link
-                  to="/CategoryBags"
+                  to="/CategoryProduct"
                   onClick={() => {
+                    setSessionStorage("productItem", "Rain Wraps");
                     scrollToTop();
+                    if (window.location.pathname === "/CategoryProduct") {
+                      window.location.reload(false);
+                    }
+                    //window.location.reload(false);
                   }}
                 >
                   <ImageCard
-                    images="../images/Bathhut/IMG_9308.jpg"
-                    titles="Bags"
-                  />
-                </Link>
-              </div>
-              <div
-                className="col-sm-8 col-lg-3 col-md"
-                style={{ paddingBottom: "2%" }}
-              >
-                <Link
-                  to="/CategoryJewelry"
-                  onClick={() => {
-                    scrollToTop();
-                  }}
-                >
-                  <ImageCard
-                    images="../images/Bathhut/IMG_1259(1).jpg"
-                    titles="Jewelry"
-                  />
-                </Link>
-              </div>
-              <div
-                className="col-sm-8 col-lg-3 col-md"
-                style={{ paddingBottom: "2%" }}
-              >
-                <Link
-                  to="/CategoryGifts"
-                  onClick={() => {
-                    scrollToTop();
-                  }}
-                >
-                  <ImageCard
-                    images="../images/Bathhut/IMG_9062.jpg"
-                    titles="Gifts"
-                  />
-                </Link>
-              </div>
-              <div
-                className="col-sm-8 col-lg-3 col-md"
-                style={{ paddingBottom: "2%" }}
-              >
-                <Link
-                  to="/Category"
-                  onClick={() => {
-                    scrollToTop();
-                  }}
-                >
-                  <ImageCard
-                    images="../images/Bathhut/IMG_3334.jpg"
-                    titles="All Items"
+                    images="../images/Bathhut/IMG_9497.HEIC.jpg"
+                    titles="Rain Wraps"
                   />
                 </Link>
               </div>
             </div>
+
             <div className="" style={{ marginTop: "2%", paddingTop: "1%" }}>
               <img
                 style={{}}

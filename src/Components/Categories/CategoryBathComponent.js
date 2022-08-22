@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
+import globalVariable from "../GlobalVariable";
 import { getSessionStorage, setSessionStorage } from "../GlobalVariable";
 
 function CategoryBathComponent() {
@@ -538,24 +539,28 @@ function CategoryBathComponent() {
                                 </Link>
                               </h3>
                               <h4 className="card-title pb-4">
-                                {val.Ad_Price_High !== null && (
+                                {val.Ad_Price_High !== null &&
+                                  val.Ad_Price_High !== 0 && (
+                                    <Link
+                                      to="/Single"
+                                      onClick={() => {
+                                        globalVariable.singleProduct = val;
+                                        localStorage.setItem(
+                                          "singleProduct",
+                                          JSON.stringify(val)
+                                        );
+                                        scrollToTop();
+                                      }}
+                                    >
+                                      ${val.Ad_Price} - ${val.Ad_Price_High}
+                                    </Link>
+                                  )}
+                                {(val.Ad_Price_High === null ||
+                                  val.Ad_Price_High === 0) && (
                                   <Link
                                     to="/Single"
                                     onClick={() => {
-                                      localStorage.setItem(
-                                        "singleProduct",
-                                        JSON.stringify(val)
-                                      );
-                                      scrollToTop();
-                                    }}
-                                  >
-                                    ${val.Ad_Price} - ${val.Ad_Price_High}
-                                  </Link>
-                                )}
-                                {val.Ad_Price_High === null && (
-                                  <Link
-                                    to="/Single"
-                                    onClick={() => {
+                                      globalVariable.singleProduct = val;
                                       localStorage.setItem(
                                         "singleProduct",
                                         JSON.stringify(val)
@@ -640,24 +645,28 @@ function CategoryBathComponent() {
                                   </Link>
                                 </h3>
                                 <h4 className="card-title pb-4">
-                                  {val.Ad_Price_High !== null && (
+                                  {val.Ad_Price_High !== null &&
+                                    val.Ad_Price_High !== 0 && (
+                                      <Link
+                                        to="/Single"
+                                        onClick={() => {
+                                          globalVariable.singleProduct = val;
+                                          localStorage.setItem(
+                                            "singleProduct",
+                                            JSON.stringify(val)
+                                          );
+                                          scrollToTop();
+                                        }}
+                                      >
+                                        ${val.Ad_Price} - ${val.Ad_Price_High}
+                                      </Link>
+                                    )}
+                                  {(val.Ad_Price_High === null ||
+                                    val.Ad_Price_High === 0) && (
                                     <Link
                                       to="/Single"
                                       onClick={() => {
-                                        localStorage.setItem(
-                                          "singleProduct",
-                                          JSON.stringify(val)
-                                        );
-                                        scrollToTop();
-                                      }}
-                                    >
-                                      ${val.Ad_Price} - ${val.Ad_Price_High}
-                                    </Link>
-                                  )}
-                                  {val.Ad_Price_High === null && (
-                                    <Link
-                                      to="/Single"
-                                      onClick={() => {
+                                        globalVariable.singleProduct = val;
                                         localStorage.setItem(
                                           "singleProduct",
                                           JSON.stringify(val)
@@ -743,24 +752,28 @@ function CategoryBathComponent() {
                                     </Link>
                                   </h3>
                                   <h4 className="card-title pb-4">
-                                    {val.Ad_Price_High !== null && (
+                                    {val.Ad_Price_High !== null &&
+                                      val.Ad_Price_High !== 0 && (
+                                        <Link
+                                          to="/Single"
+                                          onClick={() => {
+                                            globalVariable.singleProduct = val;
+                                            localStorage.setItem(
+                                              "singleProduct",
+                                              JSON.stringify(val)
+                                            );
+                                            scrollToTop();
+                                          }}
+                                        >
+                                          ${val.Ad_Price} - ${val.Ad_Price_High}
+                                        </Link>
+                                      )}
+                                    {(val.Ad_Price_High === null ||
+                                      val.Ad_Price_High === 0) && (
                                       <Link
                                         to="/Single"
                                         onClick={() => {
-                                          localStorage.setItem(
-                                            "singleProduct",
-                                            JSON.stringify(val)
-                                          );
-                                          scrollToTop();
-                                        }}
-                                      >
-                                        ${val.Ad_Price} - ${val.Ad_Price_High}
-                                      </Link>
-                                    )}
-                                    {val.Ad_Price_High === null && (
-                                      <Link
-                                        to="/Single"
-                                        onClick={() => {
+                                          globalVariable.singleProduct = val;
                                           localStorage.setItem(
                                             "singleProduct",
                                             JSON.stringify(val)
