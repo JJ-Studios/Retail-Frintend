@@ -153,7 +153,7 @@ function CategoryBathComponent() {
               className="py-0 px-5"
               style={{ fontSize: "20px" }}
             >
-              Candles
+              Bath Accessories
             </Link>
 
             <Link
@@ -595,7 +595,7 @@ function CategoryBathComponent() {
                       fontSize: "100px",
                     }}
                   >
-                    Candles
+                    Bath Accessories
                   </div>
                 </div>
                 <div className="product-grid-list">
