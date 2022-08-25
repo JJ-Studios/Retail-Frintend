@@ -8,7 +8,7 @@ import { getSessionStorage, setSessionStorage } from "../GlobalVariable";
 function CategoryBathComponent() {
   const [adList, setAdList] = useState([]);
   const [scrubList, setScrubList] = useState([]);
-  const [candleList, setCandleList] = useState([]);
+  const [bathAccessoryList, setBathAccessoryList] = useState([]);
   const [fragranceList, setFragranceList] = useState([]);
   const [soapList, setSoapList] = useState([]);
 
@@ -33,10 +33,10 @@ function CategoryBathComponent() {
     );
   };
 
-  const getCandles = (category) => {
+  const getBathAccessories = (category) => {
     Axios.get(`https://bathhut-api.herokuapp.com/GetProduct/${category}`).then(
       (response) => {
-        setCandleList(response.data);
+        setBathAccessoryList(response.data);
       }
     );
   };
@@ -59,7 +59,7 @@ function CategoryBathComponent() {
 
   useEffect(() => getAds(), []);
   useEffect(() => getScrubs("Scrubs"), []);
-  useEffect(() => getCandles("Candles"), []);
+  useEffect(() => getBathAccessories("Bath Accessories"), []);
   useEffect(() => getFragrances("Fragrances"), []);
   useEffect(() => getSoaps("Soap"), []);
 
@@ -600,7 +600,7 @@ function CategoryBathComponent() {
                 </div>
                 <div className="product-grid-list">
                   <div className="row mt-30">
-                    {candleList.map((val) => {
+                    {bathAccessoryList.map((val) => {
                       return (
                         <div className="col-sm-12 col-lg-3 col-md-6">
                           {/*className="product-item"*/}
