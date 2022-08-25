@@ -150,7 +150,7 @@ function SelectedAd() {
                   {price === 0 && <h3>From ${singleItem.Ad_Price}</h3>}
                   {price !== 0 && <h3>${+(price * qty).toFixed(12)}</h3>}
                 </div>
-                {/*singleItem.Ad_Category === "Clothing" && (
+                {singleItem.Ad_Category === "Clothing" && (
                   <div className="border-bottom border-dark py-3">
                     <h4>
                       <a>Color</a>
@@ -167,7 +167,7 @@ function SelectedAd() {
                       );
                     })}
                   </div>
-                  )*/}
+                )}
                 {singleItem.Ad_Category === "Bath" && (
                   <div className="border-bottom border-dark py-5">
                     <h4>Fragrance</h4>
@@ -290,7 +290,9 @@ function SelectedAd() {
                       })*/}
                   </div>
                 )}
-                {singleItem.Ad_Category !== "Bags" && (
+                {((singleItem.Ad_Category === "Clothing" &&
+                  singleItem.Ad_Sub_Category !== "Hats") ||
+                  singleItem.Ad_Category === "Bath") && (
                   <div className="border-bottom border-dark py-5">
                     <h4>Size</h4>
                     <select
@@ -439,95 +441,6 @@ function SelectedAd() {
                 >
                   <h4>Price</h4>
                   <p>${singleItem.Ad_Price}</p>
-                </div>*/}
-
-                {/*<div className="widget user text-center">
-                  <h4>
-                    <a>Color</a>
-                  </h4>
-                  {/*<p className="member-time">Member Since Jun 27, 2017</p>
-
-                  <a
-                    className="dot"
-                    style={{ backgroundColor: "black" }}
-                    href=""
-                  >
-                    &nbsp;
-                  </a>
-                  <a
-                    className="dot"
-                    style={{ backgroundColor: "gray" }}
-                    href=""
-                  >
-                    &nbsp;
-                  </a>
-                  <a
-                    className="dot"
-                    style={{ backgroundColor: "white" }}
-                    href=""
-                  >
-                    &nbsp;
-                  </a>
-                  <ul className="list-inline mt-20">
-                    <li className="list-inline-item">
-                      <label for="date" className="py-2">
-                        Size:&nbsp;&nbsp;
-                      </label>
-                      <select className="w-100 p-2" name="size" id="size">
-                        <option value="None">Select Size</option>
-                        <option value="XS">Extra Small</option>
-                        <option value="S">Small</option>
-                        <option value="M">Medium</option>
-                        <option value="L">Large</option>
-                        <option value="XL">Extra Large</option>
-                      </select>
-                    </li>
-                    <li className="list-inline-item pt-3">
-                      <a
-                        href=""
-                        className="btn btn-contact d-inline-block btn-primary px-lg-5 my-1 px-md-3"
-                      >
-                        Contact
-                      </a>
-                    </li>
-                    {/*<li className="list-inline-item">
-                      <a
-                        href=""
-                        className="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3"
-                      >
-                        Contact
-                      </a>
-                    </li>
-                    <li className="list-inline-item">
-                      <a
-                        href=""
-                        className="btn btn-offer d-inline-block btn-primary ml-n1 my-1 px-lg-4 px-md-3"
-                      >
-                        Make an offer
-                      </a>
-                    </li>
-                  </ul>
-                </div>*/}
-
-                {/*<div className="widget rate">
-                  <h5 className="widget-header text-center">
-                    What would you rate
-                    <br />
-                    this product
-                  </h5>
-
-                  <div className="starrr"></div>
-                </div>*/}
-
-                {/*<div className="widget coupon text-center">
-                  <p>
-                    Have a great product to post ? Share it with your fellow
-                    users.
-                  </p>
-
-                  <a href="" className="btn btn-transparent-white">
-                    Submit Listing
-                  </a>
                 </div>*/}
               </div>
             </div>
