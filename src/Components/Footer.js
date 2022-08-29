@@ -60,7 +60,7 @@ function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/Dashboard" onClick={scrollToTop}>
+                    <Link to="/Dashboardd" onClick={scrollToTop}>
                       Dashboard
                     </Link>
                   </li>
