@@ -5,17 +5,12 @@ import "./Component.css";
 
 function Header() {
   //  const { product, setProduct } = useContext(productType);
-  const [isActive, setIsActive] = useState(false);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth", // for smoothly scrolling
     });
-  };
-
-  const handleClick = (event) => {
-    setIsActive((current) => !current);
   };
 
   return (
@@ -131,7 +126,6 @@ function Header() {
                         to="/Home"
                         onClick={() => {
                           scrollToTop();
-                          handleClick();
                         }}
                         style={{ fontSize: "23px" }}
                       >
