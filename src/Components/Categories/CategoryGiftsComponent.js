@@ -9,10 +9,12 @@ function CategoryGiftsComponent() {
   // const [adList, setAdList] = useState([]);
   const [adGifts, setGiftsList] = useState([]);
   const [candleList, setCandleList] = useState([]);
+  const [gourmetList, setGourmetList] = useState([]);
 
   // const for scroll references
   const giftsRef = useRef();
   const candleRef = useRef();
+  const gourmetRef = useRef();
 
   // get ads from database
   const getGifts = (category) => {
@@ -31,9 +33,18 @@ function CategoryGiftsComponent() {
     );
   };
 
+  const getGourmet = (category) => {
+    Axios.get(`http://localhost:3001/GetProduct/${category}`).then(
+      (response) => {
+        setGourmetList(response.data);
+      }
+    );
+  };
+
   //useEffect(() => getAds(), []);
   useEffect(() => getGifts("Gifts"), []);
   useEffect(() => getCandles("Candles"), []);
+  useEffect(() => getGourmet("Gourmet"), []);
 
   // scroll to top on click
   const scrollToTop = () => {
@@ -50,7 +61,7 @@ function CategoryGiftsComponent() {
           <div className="row">
             <div className="col-md-12">
               <div className="pb-5">
-                <img className="w-100" src={"images/banner/gifts.jpg"} />
+                <img className="w-100" src={"images/banner/Gifts.jpg"} />
               </div>
             </div>
           </div>
@@ -74,6 +85,16 @@ function CategoryGiftsComponent() {
               style={{ fontSize: "20px" }}
             >
               Candles
+            </Link>
+            <Link
+              to="#"
+              onClick={() => {
+                gourmetRef.current.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="py-0 px-5"
+              style={{ fontSize: "20px" }}
+            >
+              Gourmet
             </Link>
           </div>
           <div className="row">
@@ -183,6 +204,113 @@ function CategoryGiftsComponent() {
             <div className="product-grid-list">
               <div className="row mt-30">
                 {candleList.map((val) => {
+                  return (
+                    <div className="col-sm-12 col-lg-3 col-md-6">
+                      {/*className="product-item"*/}
+                      <div className="">
+                        <div className="">
+                          <div className="thumb-content">
+                            {/*<div className="price">${val.Ad_Price}</div>*/}
+                            <Link
+                              to="/Single"
+                              onClick={() => {
+                                localStorage.setItem(
+                                  "singleProduct",
+                                  JSON.stringify(val)
+                                );
+                                scrollToTop();
+                              }}
+                            >
+                              <img
+                                className="card-img-top img-fluid"
+                                src={"images/" + val.Ad_Image_ID}
+                                alt="Product"
+                                style={{ height: "310px" }}
+                              />
+                            </Link>
+                          </div>
+                          <div
+                            className="card-body pb-5"
+                            style={{ backgroundColor: "#F7E9EC" }}
+                          >
+                            <h3 className="card-title">
+                              <Link
+                                to="/Single"
+                                onClick={() => {
+                                  localStorage.setItem(
+                                    "singleProduct",
+                                    JSON.stringify(val)
+                                  );
+                                  scrollToTop();
+                                }}
+                              >
+                                {val.Ad_Name}
+                              </Link>
+                            </h3>
+                            <h4 className="card-title pb-4">
+                              {val.Ad_Price_High !== null &&
+                                val.Ad_Price_High !== 0 && (
+                                  <Link
+                                    to="/Single"
+                                    onClick={() => {
+                                      globalVariable.singleProduct = val;
+                                      localStorage.setItem(
+                                        "singleProduct",
+                                        JSON.stringify(val)
+                                      );
+                                      scrollToTop();
+                                    }}
+                                  >
+                                    ${val.Ad_Price} - ${val.Ad_Price_High}
+                                  </Link>
+                                )}
+                              {(val.Ad_Price_High === null ||
+                                val.Ad_Price_High === 0) && (
+                                <Link
+                                  to="/Single"
+                                  onClick={() => {
+                                    globalVariable.singleProduct = val;
+                                    localStorage.setItem(
+                                      "singleProduct",
+                                      JSON.stringify(val)
+                                    );
+                                    scrollToTop();
+                                  }}
+                                >
+                                  ${val.Ad_Price}
+                                </Link>
+                              )}
+                            </h4>
+                            {/*<ul className="list-inline product-meta">
+                                <li className="list-inline-item">
+                                  <a href="single.html">{val.Ad_Category}</a>
+                                </li>
+                              </ul>*/}
+                            {/*<p className="card-text">{val.Ad_Description}</p>*/}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="pt-5 pb-3">
+              <div
+                ref={gourmetRef}
+                className="col-sm-12 py-0"
+                style={{
+                  fontFamily: "Brush Script MT, cursive",
+                  margin: "-5%",
+                  fontSize: "100px",
+                }}
+              >
+                Gourmet
+              </div>
+            </div>
+            <div className="product-grid-list">
+              <div className="row mt-30">
+                {gourmetList.map((val) => {
                   return (
                     <div className="col-sm-12 col-lg-3 col-md-6">
                       {/*className="product-item"*/}
