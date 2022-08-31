@@ -416,7 +416,10 @@ function AdListing() {
                               >
                                 <img
                                   className="card-img-top img-fluid"
-                                  src={"images/" + val.Ad_Image_ID}
+                                  src={
+                                    "https://bathhut-api.herokuapp.com/uploads/" +
+                                    val.Ad_Image_ID
+                                  }
                                   alt="Product"
                                   style={{ height: "310px" }}
                                 />

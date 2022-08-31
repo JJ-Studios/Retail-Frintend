@@ -165,7 +165,10 @@ function ViewProduct() {
                     <img
                       width="80px"
                       height="auto"
-                      src={"images/" + val.Ad_Image_ID}
+                      src={
+                        "https://bathhut-api.herokuapp.com/uploads/" +
+                        val.Ad_Image_ID
+                      }
                       alt="image description"
                     />
                   </td>
@@ -287,7 +290,10 @@ function ViewProduct() {
                             <img
                               width="200px"
                               height="auto"
-                              src={"images/" + singleCard.Ad_Image_ID}
+                              src={
+                                "https://bathhut-api.herokuapp.com/uploads/" +
+                                singleCard.Ad_Image_ID
+                              }
                               alt="Product"
                             />
                             <h2 className="py-2">{singleCard.Ad_Name}</h2>
@@ -351,7 +357,10 @@ function ViewProduct() {
                             <img
                               width="200px"
                               height="auto"
-                              src={"images/" + singleCard.Ad_Image_ID}
+                              src={
+                                "https://bathhut-api.herokuapp.com/uploads/" +
+                                singleCard.Ad_Image_ID
+                              }
                               alt="image description"
                             />
                             <br />

@@ -62,7 +62,10 @@ function GalleryComponent() {
                               >
                                 <img
                                   className="card-img-top img-fluid"
-                                  src={"images/" + val.Image}
+                                  src={
+                                    "https://bathhut-api.herokuapp.com/uploads/" +
+                                    val.Image
+                                  }
                                   alt="Product"
                                   style={{ height: "310px" }}
                                 />

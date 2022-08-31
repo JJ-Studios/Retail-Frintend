@@ -120,11 +120,17 @@ function SelectedAd() {
                 <div className="">
                   <div
                     className="product-slider-item my-4 text-center"
-                    data-image={"images/" + singleItem.Ad_Image_ID}
+                    data-image={
+                      "https://bathhut-api.herokuapp.com/uploads/" +
+                      singleItem.Ad_Image_ID
+                    }
                   >
                     <img
                       className="img-fluid"
-                      src={"images/" + singleItem.Ad_Image_ID}
+                      src={
+                        "https://bathhut-api.herokuapp.com/uploads/" +
+                        singleItem.Ad_Image_ID
+                      }
                       alt="product-img"
                       style={{ maxHeight: "500px" }}
                     />
