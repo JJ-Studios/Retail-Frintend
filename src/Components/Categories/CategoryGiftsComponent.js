@@ -34,7 +34,7 @@ function CategoryGiftsComponent() {
   };
 
   const getGourmet = (category) => {
-    Axios.get(`http://localhost:3001/GetProduct/${category}`).then(
+    Axios.get(`https://bathhut-api.herokuapp.com/GetProduct/${category}`).then(
       (response) => {
         setGourmetList(response.data);
       }
@@ -301,55 +301,30 @@ function CategoryGiftsComponent() {
                 })}
               </div>
             </div>
-            <div className="pt-5 pb-3">
-              <div
-                ref={gourmetRef}
-                className="col-sm-12 py-0"
-                style={{
-                  fontFamily: "Brush Script MT, cursive",
-                  margin: "-5%",
-                  fontSize: "100px",
-                }}
-              >
-                Gourmet
+            <div className="col-md-12">
+              <div className="pt-5 pb-3">
+                <div
+                  ref={candleRef}
+                  className="col-sm-12 py-0"
+                  style={{
+                    fontFamily: "Brush Script MT, cursive",
+                    margin: "-5%",
+                    fontSize: "100px",
+                  }}
+                >
+                  Candles
+                </div>
               </div>
-            </div>
-            <div className="product-grid-list">
-              <div className="row mt-30">
-                {gourmetList.map((val) => {
-                  return (
-                    <div className="col-sm-12 col-lg-3 col-md-6">
-                      {/*className="product-item"*/}
-                      <div className="">
+              <div className="product-grid-list">
+                <div className="row mt-30">
+                  {gourmetList.map((val) => {
+                    return (
+                      <div className="col-sm-12 col-lg-3 col-md-6">
+                        {/*className="product-item"*/}
                         <div className="">
-                          <div className="thumb-content">
-                            {/*<div className="price">${val.Ad_Price}</div>*/}
-                            <Link
-                              to="/Single"
-                              onClick={() => {
-                                localStorage.setItem(
-                                  "singleProduct",
-                                  JSON.stringify(val)
-                                );
-                                scrollToTop();
-                              }}
-                            >
-                              <img
-                                className="card-img-top img-fluid"
-                                src={
-                                  "https://bathhut-api.herokuapp.com/uploads/" +
-                                  val.Ad_Image_ID
-                                }
-                                alt="Product"
-                                style={{ height: "310px" }}
-                              />
-                            </Link>
-                          </div>
-                          <div
-                            className="card-body pb-5"
-                            style={{ backgroundColor: "#F7E9EC" }}
-                          >
-                            <h3 className="card-title">
+                          <div className="">
+                            <div className="thumb-content">
+                              {/*<div className="price">${val.Ad_Price}</div>*/}
                               <Link
                                 to="/Single"
                                 onClick={() => {
@@ -360,12 +335,54 @@ function CategoryGiftsComponent() {
                                   scrollToTop();
                                 }}
                               >
-                                {val.Ad_Name}
+                                <img
+                                  className="card-img-top img-fluid"
+                                  src={
+                                    "https://bathhut-api.herokuapp.com/uploads/" +
+                                    val.Ad_Image_ID
+                                  }
+                                  alt="Product"
+                                  style={{ height: "310px" }}
+                                />
                               </Link>
-                            </h3>
-                            <h4 className="card-title pb-4">
-                              {val.Ad_Price_High !== null &&
-                                val.Ad_Price_High !== 0 && (
+                            </div>
+                            <div
+                              className="card-body pb-5"
+                              style={{ backgroundColor: "#F7E9EC" }}
+                            >
+                              <h3 className="card-title">
+                                <Link
+                                  to="/Single"
+                                  onClick={() => {
+                                    localStorage.setItem(
+                                      "singleProduct",
+                                      JSON.stringify(val)
+                                    );
+                                    scrollToTop();
+                                  }}
+                                >
+                                  {val.Ad_Name}
+                                </Link>
+                              </h3>
+                              <h4 className="card-title pb-4">
+                                {val.Ad_Price_High !== null &&
+                                  val.Ad_Price_High !== 0 && (
+                                    <Link
+                                      to="/Single"
+                                      onClick={() => {
+                                        globalVariable.singleProduct = val;
+                                        localStorage.setItem(
+                                          "singleProduct",
+                                          JSON.stringify(val)
+                                        );
+                                        scrollToTop();
+                                      }}
+                                    >
+                                      ${val.Ad_Price} - ${val.Ad_Price_High}
+                                    </Link>
+                                  )}
+                                {(val.Ad_Price_High === null ||
+                                  val.Ad_Price_High === 0) && (
                                   <Link
                                     to="/Single"
                                     onClick={() => {
@@ -377,38 +394,23 @@ function CategoryGiftsComponent() {
                                       scrollToTop();
                                     }}
                                   >
-                                    ${val.Ad_Price} - ${val.Ad_Price_High}
+                                    ${val.Ad_Price}
                                   </Link>
                                 )}
-                              {(val.Ad_Price_High === null ||
-                                val.Ad_Price_High === 0) && (
-                                <Link
-                                  to="/Single"
-                                  onClick={() => {
-                                    globalVariable.singleProduct = val;
-                                    localStorage.setItem(
-                                      "singleProduct",
-                                      JSON.stringify(val)
-                                    );
-                                    scrollToTop();
-                                  }}
-                                >
-                                  ${val.Ad_Price}
-                                </Link>
-                              )}
-                            </h4>
-                            {/*<ul className="list-inline product-meta">
+                              </h4>
+                              {/*<ul className="list-inline product-meta">
                                 <li className="list-inline-item">
                                   <a href="single.html">{val.Ad_Category}</a>
                                 </li>
                               </ul>*/}
-                            {/*<p className="card-text">{val.Ad_Description}</p>*/}
+                              {/*<p className="card-text">{val.Ad_Description}</p>*/}
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
