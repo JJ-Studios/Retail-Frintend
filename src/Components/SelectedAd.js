@@ -157,24 +157,109 @@ function SelectedAd() {
                   {price !== 0 && <h3>${+(price * qty).toFixed(12)}</h3>}
                 </div>
                 {singleItem.Ad_Category === "Clothing" && (
-                  <div className="border-bottom border-dark py-3">
-                    <h4>
-                      <a>Color</a>
-                    </h4>
-                    {colorList.map((val) => {
-                      return (
-                        <a
-                          className="dot"
-                          style={{ backgroundColor: val.Color }}
-                          href=""
-                        >
-                          &nbsp;
-                        </a>
-                      );
-                    })}
+                  <div>
+                    <div className="border-bottom border-dark py-5">
+                      <h4>Color</h4>
+                      <select
+                        className="w-50 py-2"
+                        name="size"
+                        id="size"
+                        style={{ fontSize: "20px" }}
+                        onChange={(event) => {
+                          // check for 4 oz size
+                          if (event.target.value === "4oz") {
+                            // set the low price to active price
+                            setPrice(singleItem.Ad_Price);
+                            console.log(price);
+                          } else if (event.target.value === "8oz") {
+                            // check if there is a 4 oz size in database, check for smallest size
+                            if (singleItem.Ad_4_OZ === 0) {
+                              // set lowest price if 8 oz is smallest
+                              setPrice(singleItem.Ad_Price);
+                            } else if (singleItem.Ad_Price_High === null) {
+                              setPrice(+(singleItem.Ad_Price + 10).toFixed(12));
+                              console.log(price);
+                            } else {
+                              midPrice =
+                                singleItem.Ad_Price +
+                                (singleItem.Ad_Price_High -
+                                  singleItem.Ad_Price) /
+                                  2;
+                              setPrice(midPrice);
+                              console.log(price);
+                            }
+                          } else if (event.target.value === "16oz") {
+                            if (singleItem.Ad_Price_High === null) {
+                              setPrice(+(singleItem.Ad_Price + 20).toFixed(12));
+                              console.log(price);
+                            } else {
+                              setPrice(singleItem.Ad_Price_High);
+                            }
+                          }
+                        }}
+                      >
+                        <option className="h4" value="None">
+                          Select Color
+                        </option>
+                        {singleItem.Ad_Color_1 !== null &&
+                          singleItem.Ad_Color_1 !== "" && (
+                            <option
+                              className="h4"
+                              value={singleItem.Ad_Color_1}
+                            >
+                              {singleItem.Ad_Color_1}
+                            </option>
+                          )}
+                        {singleItem.Ad_Color_2 !== null &&
+                          singleItem.Ad_Color_2 !== "" && (
+                            <option
+                              className="h4"
+                              value={singleItem.Ad_Color_2}
+                            >
+                              {singleItem.Ad_Color_2}
+                            </option>
+                          )}
+                        {singleItem.Ad_Color_3 !== null &&
+                          singleItem.Ad_Color_3 !== "" && (
+                            <option
+                              className="h4"
+                              value={singleItem.Ad_Color_3}
+                            >
+                              {singleItem.Ad_Color_3}
+                            </option>
+                          )}
+                        {singleItem.Ad_Color_4 !== null &&
+                          singleItem.Ad_Color_4.length !== "" && (
+                            <option
+                              className="h4"
+                              value={singleItem.Ad_Color_4}
+                            >
+                              {singleItem.Ad_Color_4}
+                            </option>
+                          )}
+                        {singleItem.Ad_Color_5 !== null &&
+                          singleItem.Ad_Color_5 !== "" && (
+                            <option
+                              className="h4"
+                              value={singleItem.Ad_Color_5}
+                            >
+                              {singleItem.Ad_Color_5}
+                            </option>
+                          )}
+                        {singleItem.Ad_Color_6 !== null &&
+                          singleItem.Ad_Color_6 !== "" && (
+                            <option
+                              className="h4"
+                              value={singleItem.Ad_Color_6}
+                            >
+                              {singleItem.Ad_Color_6}
+                            </option>
+                          )}
+                      </select>
+                    </div>
                   </div>
                 )}
-                {singleItem.Ad_Category === "Bath" && (
+                {singleItem.Ad_Sub_Category === "Scrubs" && (
                   <div className="border-bottom border-dark py-5">
                     <h4>Fragrance</h4>
                     <button
@@ -298,7 +383,7 @@ function SelectedAd() {
                 )}
                 {((singleItem.Ad_Category === "Clothing" &&
                   singleItem.Ad_Sub_Category !== "Hats") ||
-                  singleItem.Ad_Category === "Bath") && (
+                  singleItem.Ad_Sub_Category === "Scrubs") && (
                   <div className="border-bottom border-dark py-5">
                     <h4>Size</h4>
                     <select
