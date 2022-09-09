@@ -26,7 +26,13 @@ function CreateAd() {
   const [adEightOz, setadEightOz] = useState(0);
   const [adSixteenOz, setadSixteenOz] = useState(0);
   const [adSubCategory, setAdSubCategory] = useState("");
-  const [adQty, setAdQty] = useState(0);
+  const [adQty, setAdQty] = useState(1);
+  const [adColor1, setAdColor1] = useState("");
+  const [adColor2, setAdColor2] = useState("");
+  const [adColor3, setAdColor3] = useState("");
+  const [adColor4, setAdColor4] = useState("");
+  const [adColor5, setAdColor5] = useState("");
+  const [adColor6, setAdColor6] = useState("");
 
   const [categoryList, setCategoryList] = useState([]);
   const [brandList, setBrandList] = useState([]);
@@ -89,6 +95,12 @@ function CreateAd() {
       adEightOz: adEightOz,
       adSixteenOz: adSixteenOz,
       adQty: adQty,
+      adColor1: adColor1,
+      adColor2: adColor2,
+      adColor3: adColor3,
+      adColor4: adColor4,
+      adColor5: adColor5,
+      adColor6: adColor6,
       //imageID: imageName,
     }).then(() => {
       alert("Item Uploaded");
@@ -383,6 +395,9 @@ function CreateAd() {
                           className="border-0 py-2 w-100 price"
                           placeholder="Color 1"
                           id="color"
+                          onChange={(event) => {
+                            setAdColor1(event.target.value);
+                          }}
                         />
                       </div>
                       <div className="col-lg-4 mr-lg-4 rounded bg-white my-2 ">
@@ -392,6 +407,9 @@ function CreateAd() {
                           className="border-0 py-2 w-100 price"
                           placeholder="Color 2"
                           id="color"
+                          onChange={(event) => {
+                            setAdColor2(event.target.value);
+                          }}
                         />
                       </div>
                       <div className="col-lg-4 mr-lg-4 rounded bg-white my-2 ">
@@ -401,6 +419,9 @@ function CreateAd() {
                           className="border-0 py-2 w-100 price"
                           placeholder="Color 3"
                           id="color"
+                          onChange={(event) => {
+                            setAdColor3(event.target.value);
+                          }}
                         />
                       </div>
                       <div className="col-lg-4 mr-lg-4 rounded bg-white my-2 ">
@@ -410,6 +431,9 @@ function CreateAd() {
                           className="border-0 py-2 w-100 price"
                           placeholder="Color 4"
                           id="color"
+                          onChange={(event) => {
+                            setAdColor4(event.target.value);
+                          }}
                         />
                       </div>
                       <div className="col-lg-4 mr-lg-4 rounded bg-white my-2 ">
@@ -419,6 +443,9 @@ function CreateAd() {
                           className="border-0 py-2 w-100 price"
                           placeholder="Color 5"
                           id="color"
+                          onChange={(event) => {
+                            setAdColor5(event.target.value);
+                          }}
                         />
                       </div>
                       <div className="col-lg-4 mr-lg-4 rounded bg-white my-2 ">
@@ -428,6 +455,9 @@ function CreateAd() {
                           className="border-0 py-2 w-100 price"
                           placeholder="Color 6"
                           id="color"
+                          onChange={(event) => {
+                            setAdColor6(event.target.value);
+                          }}
                         />
                       </div>
                     </div>
