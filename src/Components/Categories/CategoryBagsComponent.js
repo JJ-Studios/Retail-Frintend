@@ -219,7 +219,6 @@ function CategoryBagsComponent() {
             </Link>
           </div>
           <div className="row">
-            <div className="col-md-3"></div>
             <div className="col-md-12">
               <div className="pt-5 pb-3">
                 <div

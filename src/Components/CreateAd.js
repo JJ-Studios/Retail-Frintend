@@ -105,7 +105,7 @@ function CreateAd() {
     <body className="body-wrapper" style={{ backgroundColor: "#F7E9EC" }}>
       <section className="ad-post py-5">
         <div className="container">
-          <form action="#" onClick={handleSubmit}>
+          <form action="#" onSubmit={handleSubmit}>
             <fieldset className="border border-dark p-4 mb-5">
               <div className="row">
                 <div className="col-lg-12">

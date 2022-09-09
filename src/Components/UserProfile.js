@@ -471,6 +471,23 @@ function UserProfile() {
                 <span>{numNoShipItems}</span>
               </Link>
             </li>
+            <li>
+              <Link
+                to="/DashboardProduct"
+                onClick={() => {
+                  setSessionStorage("productItem", "Gourmet");
+
+                  scrollToTop();
+                  if (window.location.pathname === "/DashboardProduct") {
+                    window.location.reload(false);
+                  }
+                  //window.location.reload(false);
+                }}
+              >
+                <i className="fa fa-paint-brush"></i> View Gourmet
+                <span>{numNoShipItems}</span>
+              </Link>
+            </li>
           </ul>
         </div>
 
