@@ -229,7 +229,7 @@ function SelectedAd() {
                             </option>
                           )}
                         {singleItem.Ad_Color_4 !== null &&
-                          singleItem.Ad_Color_4.length !== "" && (
+                          singleItem.Ad_Color_4 !== "" && (
                             <option
                               className="h4"
                               value={singleItem.Ad_Color_4}
