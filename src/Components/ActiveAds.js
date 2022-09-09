@@ -135,16 +135,17 @@ function ActiveAds() {
     });
   };
 
-  const deleteAd = (id) => {
-    Axios.delete(`https://bathhut-api.herokuapp.com/DeleteItem/${id}`);
-    window.location.reload(false);
+  const deleteAd = (id, imageID) => {
+    Axios.delete(
+      `https://bathhut-api.herokuapp.com/DeleteItem/${id}/${imageID}`
+    );
+    //window.location.reload(false);
   };
 
-  /*const getSingleAd = (id) => {
-    Axios.get(`http://localhost:3001/GetSingleAd/${id}`).then((response) => {
-      setSingleAdList(response.data);
-    });
-  };*/
+  const removeItem = (Card) => {
+    //const Card = event.target.getAttribute("Card");
+    setAdList(adList.filter((item) => item.Card !== Card));
+  };
 
   useEffect(() => getAds(), []);
   useEffect(() => getCategories(), []);
@@ -755,7 +756,11 @@ function ActiveAds() {
                               className="btn btn-danger"
                               data-dismiss="modal"
                               onClick={() => {
-                                deleteAd(singleCard.Card);
+                                deleteAd(
+                                  singleCard.Card,
+                                  singleCard.Ad_Image_ID
+                                );
+                                removeItem(singleCard.Card);
                               }}
                             >
                               Delete

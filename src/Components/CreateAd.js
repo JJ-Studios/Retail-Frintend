@@ -96,11 +96,16 @@ function CreateAd() {
     });
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    event.target.reset();
+  };
+
   return (
     <body className="body-wrapper" style={{ backgroundColor: "#F7E9EC" }}>
       <section className="ad-post py-5">
         <div className="container">
-          <form action="#">
+          <form action="#" onClick={handleSubmit}>
             <fieldset className="border border-dark p-4 mb-5">
               <div className="row">
                 <div className="col-lg-12">
@@ -368,6 +373,65 @@ function CreateAd() {
                       </div>*/}
                     </div>
                   </div>
+                  <div className="price">
+                    <h6 className="font-weight-bold pt-4 pb-1">Color:</h6>
+                    <div className="row px-3">
+                      <div className="col-lg-4 mr-lg-4 rounded bg-white my-2 ">
+                        <input
+                          type="text"
+                          name="color"
+                          className="border-0 py-2 w-100 price"
+                          placeholder="Color 1"
+                          id="color"
+                        />
+                      </div>
+                      <div className="col-lg-4 mr-lg-4 rounded bg-white my-2 ">
+                        <input
+                          type="text"
+                          name="color"
+                          className="border-0 py-2 w-100 price"
+                          placeholder="Color 2"
+                          id="color"
+                        />
+                      </div>
+                      <div className="col-lg-4 mr-lg-4 rounded bg-white my-2 ">
+                        <input
+                          type="text"
+                          name="color"
+                          className="border-0 py-2 w-100 price"
+                          placeholder="Color 3"
+                          id="color"
+                        />
+                      </div>
+                      <div className="col-lg-4 mr-lg-4 rounded bg-white my-2 ">
+                        <input
+                          type="text"
+                          name="color"
+                          className="border-0 py-2 w-100 price"
+                          placeholder="Color 4"
+                          id="color"
+                        />
+                      </div>
+                      <div className="col-lg-4 mr-lg-4 rounded bg-white my-2 ">
+                        <input
+                          type="text"
+                          name="color"
+                          className="border-0 py-2 w-100 price"
+                          placeholder="Color 5"
+                          id="color"
+                        />
+                      </div>
+                      <div className="col-lg-4 mr-lg-4 rounded bg-white my-2 ">
+                        <input
+                          type="text"
+                          name="color"
+                          className="border-0 py-2 w-100 price"
+                          placeholder="Color 6"
+                          id="color"
+                        />
+                      </div>
+                    </div>
+                  </div>
                   <h6 className="font-weight-bold pt-4 pb-1">Item Image:</h6>
                   <div className="choose-file text-center my-2 py-4 rounded">
                     <label for="file-upload">
@@ -379,7 +443,7 @@ function CreateAd() {
                         Select image
                       </span>
                       <span className="d-block">
-                        Maximum upload file size: 10 MB
+                        Must have file extension: jpg or png
                       </span>
                       <span className="d-block">{imageName}</span>
                       <input

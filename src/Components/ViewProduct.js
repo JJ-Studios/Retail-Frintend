@@ -136,7 +136,12 @@ function ViewProduct() {
     Axios.delete(
       `https://bathhut-api.herokuapp.com/DeleteItem/${id}/${imageID}`
     );
-    window.location.reload(false);
+    //window.location.reload(false);
+  };
+
+  const removeItem = (Card) => {
+    //const Card = event.target.getAttribute("Card");
+    setAdList(adList.filter((item) => item.Card !== Card));
   };
 
   useEffect(() => getAds(getSessionStorage("productItem")), []);
@@ -748,11 +753,12 @@ function ViewProduct() {
                               type="button"
                               className="btn btn-danger"
                               data-dismiss="modal"
-                              onClick={() => {
+                              onClick={(event) => {
                                 deleteAd(
                                   singleCard.Card,
                                   singleCard.Ad_Image_ID
                                 );
+                                removeItem(singleCard.Card);
                               }}
                             >
                               Delete

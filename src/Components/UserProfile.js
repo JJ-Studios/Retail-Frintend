@@ -435,6 +435,45 @@ function UserProfile() {
           </ul>
         </div>
 
+        <div className="widget user-dashboard-menu">
+          <h1>Gifts</h1>
+          <ul>
+            <li>
+              <Link
+                to="/DashboardProduct"
+                onClick={() => {
+                  setSessionStorage("productItem", "Gifts");
+                  scrollToTop();
+                  if (window.location.pathname === "/DashboardProduct") {
+                    window.location.reload(false);
+                  }
+                  //window.location.reload(false);
+                }}
+              >
+                <i className="fa fa-paint-brush"></i> View Gifts
+                <span>{numNoShipItems}</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/DashboardProduct"
+                onClick={() => {
+                  setSessionStorage("productItem", "Candles");
+
+                  scrollToTop();
+                  if (window.location.pathname === "/DashboardProduct") {
+                    window.location.reload(false);
+                  }
+                  //window.location.reload(false);
+                }}
+              >
+                <i className="fa fa-paint-brush"></i> View Candles
+                <span>{numNoShipItems}</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
+
         {/*<div
           className="modal fade"
           id="deleteaccount"
