@@ -92,7 +92,7 @@ function CreateAd() {
       //imageID: imageName,
     }).then(() => {
       alert("Item Uploaded");
-      window.location.reload(false);
+      //window.location.reload(false);
     });
   };
 
