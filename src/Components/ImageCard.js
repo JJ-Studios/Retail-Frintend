@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 
 function ImageCard(props) {
   return (
-    <div className="card text-center" style={{ width: "300px" }}>
+    <div
+      className="card text-center"
+      style={{ width: "300px", maxWidth: "100%" }}
+    >
       {/*card text-center*/}
       <img
         className="card-img-top img-fluid"

@@ -113,6 +113,13 @@ function CreateAd() {
     event.target.reset();
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      //behavior: "smooth", // for smoothly scrolling
+    });
+  };
+
   return (
     <body className="body-wrapper" style={{ backgroundColor: "#F7E9EC" }}>
       <section className="ad-post py-5">
@@ -493,6 +500,7 @@ function CreateAd() {
               onClick={() => {
                 sendImage();
                 addListing();
+                scrollToTop();
               }}
               class="btn btn-primary d-block mt-2"
             >
